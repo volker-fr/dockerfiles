@@ -5256,9 +5256,9 @@ sub cmd_show($$) {
 
   $state->{kdb}->unlock;
   print "\n";
-  if (defined($ent->{path})) {
-    $ent->{path} =~ s/.*\/Root//;
-    print show_format("Path",$ent->{path}) . "\n";
+  if (defined($ent->{full_path})) {
+    $ent->{full_path} =~ s/.*\/Root//;
+    print show_format("Path",$ent->{full_path}) . "\n";
   }
   # Unless -f is specified, we "hide" the password as red-on-red.
   my $password = $ent->{password};
