@@ -1,5 +1,7 @@
 # Usage:
-#     docker run -d \
+#     export DISPLAY=:0
+#     xhost +SI:localuser:root
+#     docker run --rm -it \
 #         -p 5900:5900 \
 #         -v /tmp/.X11-unix:/tmp/.X11-unix \
 #         --ipc=host -v /etc/localtime:/etc/localtime:ro
