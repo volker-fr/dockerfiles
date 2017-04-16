@@ -9,7 +9,7 @@ Simple `duplicity` container
             -v "$HOME/mydata/cache:/root/.cache" \
             -e "AWS_ACCESS_KEY_ID=${AWS_ACCESS_KEY_ID}" \
             -e "AWS_ACCESS_KEY_ID=${AWS_ACCESS_KEY_ID}" \
-            volkerfr/duplicity
+            volkerfr/duplicity "$@"
     }
 
 Then run duplicity as usual while pointing files to /data

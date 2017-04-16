@@ -7,10 +7,10 @@
 #            -v "$HOME/mydata/cache:/root/.cache" \
 #            -e "AWS_ACCESS_KEY_ID=${AWS_ACCESS_KEY_ID}" \
 #            -e "AWS_ACCESS_KEY_ID=${AWS_ACCESS_KEY_ID}" \
-#            volkerfr/duplicity
+#            volkerfr/duplicity "$@"
 #    }
 FROM alpine
 
-RUN apk --update add duplicity
+RUN apk --update add duplicity ca-certificates
 
 ENTRYPOINT ["/usr/bin/duplicity"]
