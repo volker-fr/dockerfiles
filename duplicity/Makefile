@@ -1,4 +1,4 @@
 .PHONY: all
 
 all:
-	docker build -t rdiff-backup .
+	docker build -t duplicity .
