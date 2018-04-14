@@ -12,6 +12,8 @@
 #    }
 FROM alpine
 
-RUN apk --update add duplicity ca-certificates
+RUN apk --update --no-cache add duplicity ca-certificates
+# Duplicity changed their dependency from lockfile to fasteners
+RUN apk --update --no-cache add py2-pip && pip install fasteners
 
 ENTRYPOINT ["/usr/bin/duplicity"]
