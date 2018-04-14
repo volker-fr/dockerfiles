@@ -9,6 +9,7 @@ Simple `duplicity` container
             -v "$HOME/mydata/cache:/root/.cache" \
             -e "AWS_ACCESS_KEY_ID=${AWS_ACCESS_KEY_ID}" \
             -e "AWS_ACCESS_KEY_ID=${AWS_ACCESS_KEY_ID}" \
+            -h duplicity-docker-container \
             volkerfr/duplicity "$@"
     }
 
