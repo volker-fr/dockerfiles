@@ -2,6 +2,7 @@
 
 ## Source
 * https://github.com/frioux/goobook commit 1f8c70dbbe0f05f6e3aa3db4f61ae73d047beeab
+* Updated to Python 3 and the latest goobook version.
 
 ## Usage
 

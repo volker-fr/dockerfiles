@@ -1,12 +1,11 @@
-FROM alpine:3.2
+FROM alpine:3.11
 
-RUN apk add --update python py-pip \
- && pip install goobook            \
- && rm -rf /usr/lib/python2.7/distutils  \
-       /usr/lib/python2.7/idlelib    \
-       /usr/lib/python2.7/lib-tk     \
-       /usr/lib/python2.7/ensurepip  \
-       /usr/lib/python2.7/pydoc_data \
+RUN apk add --update python3 py3-pip \
+ && pip3 install goobook            \
+ && apk del py3-pip \
+ && rm -rf /usr/lib/python3.8/distutils \
+       /usr/lib/python3.8/ensurepip  \
+       /usr/lib/python3.8/pydoc_data \
        /var/cache/apk/*
 
 VOLUME ["/.goobook_cache", "/.goobook_auth.json"]
