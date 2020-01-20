@@ -10,10 +10,11 @@
 #            -h duplicity-docker-container \
 #            volkerfr/duplicity "$@"
 #    }
-FROM alpine
+FROM ubuntu
 
-RUN apk --update --no-cache add duplicity ca-certificates
-# Duplicity changed their dependency from lockfile to fasteners
-RUN apk --update --no-cache add py2-pip && pip install fasteners
+RUN apt-get update && \
+    apt-get upgrade -y && \
+    apt-get install -y duplicity && \
+    rm -rf /var/lib/apt/lists/*
 
 ENTRYPOINT ["/usr/bin/duplicity"]
