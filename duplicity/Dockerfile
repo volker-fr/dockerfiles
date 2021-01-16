@@ -15,8 +15,7 @@ FROM ubuntu
 RUN apt-get update && \
     apt-get upgrade -y && \
     apt-get install -y software-properties-common && \
-    add-apt-repository ppa:duplicity-team/ppa && \
-    apt-get install -y duplicity python-boto && \
+    apt-get install -y duplicity python3-boto3 && \
     rm -rf /var/lib/apt/lists/*
 
 ENTRYPOINT ["/usr/bin/duplicity"]
