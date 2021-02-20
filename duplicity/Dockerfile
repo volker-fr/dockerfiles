@@ -10,7 +10,7 @@
 #            -h duplicity-docker-container \
 #            volkerfr/duplicity "$@"
 #    }
-FROM ubuntu
+FROM debian:testing
 
 RUN apt-get update && \
     apt-get upgrade -y && \
